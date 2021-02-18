@@ -16,7 +16,7 @@
   <form [formGroup]="myForm" (ngSubmit)="insertTask()">
     <ion-item>
       <ion-label fixed>Projet</ion-label>
-      <ion-select placeholder="Choisir">
+      <ion-select [formControl]="myForm.controls['project_id']" placeholder="Choisir">
         <ion-select-option *ngFor="let project of projects" value="{{project.id}}">{{project.name}}</ion-select-option>
       </ion-select>
     </ion-item>
@@ -26,11 +26,11 @@
     </ion-item>
     <ion-item>
       <ion-label fixed>Estimation</ion-label>
-      <ion-input [formControl]="myForm.controls['estimate']"></ion-input>
+      <ion-input type="number" [formControl]="myForm.controls['estimate']"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label fixed>Type de tâche</ion-label>
-      <ion-select placeholder="Choisir">
+      <ion-select  [formControl]="myForm.controls['task_type_id']"  placeholder="Choisir">
         <ion-select-option *ngFor="let type of taskTypes" value="{{type.id}}">{{type.name}}</ion-select-option>
       </ion-select>
     </ion-item>

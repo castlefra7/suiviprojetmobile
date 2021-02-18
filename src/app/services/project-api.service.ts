@@ -23,9 +23,11 @@ export class ProjectAPIService {
 
   getTasks(project_id): Task[] {
     let result = [];
-    result.push(new Task(1, "directives", 5));
-    result.push(new Task(2, "components", 2));
-    result.push(new Task(3, "dependency injections", 3));
+    const task = new Task();
+    task.name = "lire livre ng";
+    task.estimatedHours = 2;
+    task.id = 1;
+    result.push(task);
     return result;
   }
 
@@ -38,17 +40,26 @@ export class ProjectAPIService {
   }
 
   getTaskDetail(id_task: Number): Task {
-    
-    let result = [];
-    result.push(new Task(1, "directives", 5));
-    result.push(new Task(2, "components", 2));
-    result.push(new Task(3, "dependency injections", 3));
-    let task = null;
-    result.forEach((t) =>{
-      if(t.id == id_task) task = t;
-    })
+    let task = new Task();
+    task.name = "lire livre ng";
+    task.estimatedHours = 2;
 
+    task.id = 1;
     return task;
+  }
+
+  insertProject(project: Project): void {
+
+  }
+
+  insertTask(task: Task): void {
+    console.log(task);
+
+  }
+
+  insertTaskAdvances(task: Task): void {
+    console.log(task);
+
   }
 
 }

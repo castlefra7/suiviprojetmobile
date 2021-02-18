@@ -6,10 +6,8 @@ export class Task {
     task_type_id: Number;
     workedHours: Number;
     remainingHours: Number;
+    date: Date;
 
-    constructor(_id: Number, _name: string, _estimate: Number) {
-        this.name = _name;
-        this.id = _id;
-        this.estimatedHours = _estimate;
+    constructor() {
     }
 }

@@ -26,7 +26,8 @@ export class InsertTaskComponent implements OnInit {
     this.myForm = this.fb.group({
       'name': '',
       'estimate': '',
-      'id_task_type': ''
+      'task_type_id': '',
+      'project_id': ''
     });
     this.message = '';
     this.route.params.subscribe(params => {
@@ -40,7 +41,16 @@ export class InsertTaskComponent implements OnInit {
   }
 
   insertTask() {
+    const values = this.myForm.value;
+    const newTask = new Task();
+    newTask.name = values.name;
+    newTask.estimatedHours = values.estimate;
+    newTask.project_id = values.project_id;
+    newTask.task_type_id = values.task_type_id;
 
+    this.projectAPI.insertTask(newTask);
+    
+    
   }
 
 }

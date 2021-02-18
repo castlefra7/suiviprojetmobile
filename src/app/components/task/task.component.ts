@@ -32,4 +32,16 @@ export class TaskComponent implements OnInit {
     this.task = this.projectAPI.getTaskDetail(this.task_id);
   }
 
+  insertTaskAdvance() {
+    const values = this.myForm.value;
+
+    const task = new Task();
+    task.date = values.date;
+    task.remainingHours = values.remainingHours;
+    task.workedHours = values.workingHours;
+
+    this.projectAPI.insertTaskAdvances(task);
+
+  }
+
 }

@@ -13,10 +13,9 @@ import { ProjectRowComponent } from '../components/project-row/project-row.compo
 import { TaskRowComponent } from '../components/task-row/task-row.component';
 import { InsertTaskComponent } from '../components/insert-task/insert-task.component';
 import { AuthService } from '../services/auth.service';
-import { InsertTaskAdvanceComponent } from '../components/insert-task-advance/insert-task-advance.component';
 
 @NgModule({
-  declarations: [ProjectManagement, ProjectListComponent, ProjectComponent, TaskComponent, TaskListComponent, ProjectRowComponent, TaskRowComponent, InsertTaskComponent, InsertTaskAdvanceComponent
+  declarations: [ProjectManagement, ProjectListComponent, ProjectComponent, TaskComponent, TaskListComponent, ProjectRowComponent, TaskRowComponent, InsertTaskComponent
   ],
   imports: [
     CommonModule,
