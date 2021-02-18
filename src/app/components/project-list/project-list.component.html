@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Projets
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Projets</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <app-project-row *ngFor="let project of projects" [project]="project"></app-project-row>
+  </ion-list>
+
+</ion-content>

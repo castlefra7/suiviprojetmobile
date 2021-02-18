@@ -1,0 +1,4 @@
+<ion-item>
+  <ion-label>{{ task.name | titlecase  }}</ion-label>
+  <a [routerLink]="['/management/task', task.id]">Détail tâche</a>
+</ion-item>

@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Insertion de tâche
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Insertion de tâche</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form [formGroup]="myForm" (ngSubmit)="insertTask()">
+    <ion-item>
+      <ion-label fixed>Projet</ion-label>
+      <ion-select placeholder="Choisir">
+        <ion-select-option *ngFor="let project of projects" value="{{project.id}}">{{project.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Nom</ion-label>
+      <ion-input [formControl]="myForm.controls['name']"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Estimation</ion-label>
+      <ion-input [formControl]="myForm.controls['estimate']"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Type de tâche</ion-label>
+      <ion-select placeholder="Choisir">
+        <ion-select-option *ngFor="let type of taskTypes" value="{{type.id}}">{{type.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button size="block" type="submit" color="primary">Enregistrer</ion-button>
+  </form>
+
+</ion-content>
